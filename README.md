@@ -1,19 +1,19 @@
 # tms-perception
-Perception packages for [irvs/ros_tms](https://github.com/irvs/ros_tms). Integration of ROS and some Deep Learning achievements.
+![ros-tms](https://avatars2.githubusercontent.com/u/8273459?v=3&s=200)  
+Perception packages for [irvs/ros_tms](https://github.com/irvs/ros_tms).  
 
----
-# tms_ss_rcnn
+## tms_ss_rcnn
 ROS-based client/server nodes to detect multiple objects from an image
 * Object detection server wrapping the [Faster R-CNN](https://github.com/rbgirshick/py-faster-rcnn)
 * Android app to stream camera images
 
 **Messaging through ROS service**  
-Request: An image compressed to jpeg format
-```
+```sh
+# Request: An image compressed to jpeg format
 sensor_msgs/CompressedImage image
 ```
-Response: Arrays contains a class, score and region
-```
+```sh
+# Response: Arrays contains a class, score and region
 tms_ss_rcnn/object[] objects
 ```
 
@@ -24,11 +24,10 @@ Please refer to this [link](https://github.com/irvs/ros_tms/wiki/how-to-configur
 # CPU
 $ rosrun tms_ss_rcnn faster_rcnn.py --cpu
 # GPU
-$ rosrun tms_ss_rcnn faster_rcnn_gpu_workaround.py
+$ rosrun tms_ss_rcnn faster_rcnn_gpu.py
 ```
 
----
-# tms_ss_cnn
+## tms_ss_cnn
 Simple image recognition nodes
 
 **Demo**  
